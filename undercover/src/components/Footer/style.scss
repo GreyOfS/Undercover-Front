@@ -1,0 +1,18 @@
+@import '../../assets/css/color';
+
+.footer {
+    gap: 10px;
+    display: flex;
+    padding: 0 20px;
+    grid-area: footer;
+    align-items: center;
+    background-color: $light_color;
+
+    & > a {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../assets/css/color';
+
+.input {
+    position: relative;
+
+    &_field {
+        color: $text;
+        border: none;
+        background: none;
+        font-size: 1.2em;
+        padding: 25px 10px 10px;
+        border-bottom: 2px solid $light_color;
+        backdrop-filter: brightness($brightness);
+    }
+
+    &_label {
+        top: auto;
+        left: 10px;
+        bottom: 20px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.2em;
+        border-radius: 5px;
+        position: absolute;
+        pointer-events: none;
+        text-transform: capitalize;
+        transition: font-size .5s, transform .5s, padding .5s;
+    }
+
+    &_field:focus {
+        outline: none;
+    }
+
+    &_field:focus + &_label,
+    &_field:not(:placeholder-shown) + &_label {
+        font-size: .8rem;
+        color: $light_color;
+        transform: translateY(-20px);
+    }
+}
+
+.button {
+    color: #fff;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: $light_color;
+    border: 2px solid $light_color;
+
+    &.border {
+        background: none;
+    }
+}

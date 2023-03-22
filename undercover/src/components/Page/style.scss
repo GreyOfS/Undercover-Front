@@ -1,0 +1,14 @@
+@import '../../assets/css/color';
+
+.page {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 4rem;
+    grid-template-areas: 
+        "main"
+        "footer";
+
+    &_main {
+        grid-area: main;
+    }
+}

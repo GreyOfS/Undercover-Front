@@ -1,0 +1,20 @@
+$text: var(--text);
+$dark_color: var(--dark-color);
+$light_color: var(--light-color);
+$brightness: var(--brightness);
+$background: linear-gradient(135deg, $dark_color 0%, $light_color 100%);
+
+:root {
+    --dark-color: #001C2F;
+    --light-color: #2A4E62;
+}
+
+.app.light {
+    --brightness: 1.5;
+    --text: #000;
+}
+
+.app.dark {
+    --brightness: .5;
+    --text: #fff;
+}

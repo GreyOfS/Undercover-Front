@@ -1,0 +1,31 @@
+@import '../../assets/css/color';
+
+.page404 {
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &_unicorn {
+        aspect-ratio: 1;
+        margin-right: -15%;
+        width: min(600px, 90vw);
+        mix-blend-mode: multiply;
+    }
+
+    &_404 {
+        color: $light_color;
+        font-weight: 900;
+        mix-blend-mode: color-dodge;
+        position: absolute;
+        font-size: min(25rem, 1rem + 25vw);
+    }
+
+    &_text {
+        color: #fff;
+        text-align: center;
+        font-size: min(2rem, 1rem + 2vw);
+    }
+}
