@@ -1,13 +1,15 @@
 import './style.scss';
 import Page from '../Page';
-import PropTypes from 'prop-types';
+import { ErrorsMessage } from '../Error';
+import { Button, Input } from '../Input';
 import ThemeToggleBtn from '../ThemeToggleBtn';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
-import { Button, Input } from '../Input';
 
 function SigninTab() {
-    const { register } = useForm();
+    // const { register } = useForm();
     return(
         <form className='signinTab'>
 
@@ -17,12 +19,14 @@ function SigninTab() {
 
 function LoginTab() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [errorsList, setErrorsList] = useState([]);
     return(
         <form className='loginTab' onSubmit={handleSubmit((data) => {
             console.log(data, errors);
         })}>
             <Input type='email' register={{...register('email', { required: "The email is required" })}} tag='email'/>
             <Input type='password' register={{...register('password', { required: "The password is required" })}} tag='password'/>
+            <ErrorsMessage codes={errorsList} />
             <Button type='submit'>Login</Button>
         </form>
         )

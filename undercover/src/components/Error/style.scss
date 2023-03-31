@@ -29,3 +29,12 @@
         font-size: min(2rem, 1rem + 2vw);
     }
 }
+
+.errorsList {
+    display: flex;
+    flex-direction: column;
+
+    &_message {
+        color: crimson;
+    }
+}

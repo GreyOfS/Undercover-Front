@@ -1,9 +1,78 @@
-.pageLogInAndSignIn {
+@import '../../assets/css/color';
+
+.pageLoginAndSignin {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &_themeToggleBtn {
         position: absolute;
         top: 48px;
         right: 48px;
     }
+
+    &_section {
+        &_nav {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 30px;
+
+            &_link {
+                background-color: $light_color;
+                color: #fff;
+                text-decoration: none;
+                padding: 5px 10px;
+                font-weight: 700;
+                position: relative;
+                filter: brightness(.8);
+
+                &:first-child {
+                    border-radius: 10px 0 0 0;
+                }
+
+                &::after, &:not(:first-child)::before {
+                    content: "";
+                    background-color: $light_color;
+                    position: absolute;
+                    height: 100%;
+                    width: 35px;
+                    top: 0;
+                    z-index: -1;
+                }
+
+                &::after {
+                    right: -20px;
+                    border-radius: 0 10px 0 0;
+                    transform: skew(35deg, 0);
+                }
+
+                &:not(:first-child)::before {
+                    left: -20px;
+                    border-radius: 10px 0 0 0;
+                    transform: skew(-35deg, 0);
+                }
+
+                &--active {
+                    z-index: 1;
+                    filter: drop-shadow(0 0 10px #0005);
+                }
+            }
+        }
+
+        & > *:not(:first-child) {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+.loginTab {
+    backdrop-filter: brightness($brightness);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 0 25px 25px 25px;
 }

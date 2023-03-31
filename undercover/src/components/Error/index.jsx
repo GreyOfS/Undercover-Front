@@ -46,20 +46,20 @@ export function Page404() {
 }
 
 /*--- Page404 ---*/
-/*--- ErrorMessage ---*/
+/*--- ErrorsMessage ---*/
 
-// export function ErrorMessage({ errors }) {
-//     return(
-//         <></>
-//     )
-// }
+export function ErrorsMessage({ codes }) {
 
-// ErrorMessage.propTypes = {
-//     errors: PropTypes.array.isRequired
-// }
+    const codeErrors = {
+        'WRONG_IDENTIFIERS' : "Password or email its incorrect"
+    }
 
-export class ErrorMessage {
-    
+    return (
+        <>
+            {(codes !== [] && codes !== null && codes !== undefined) && <div className='errorsList'>
+                {codes.map((code, key) => <span key={key} className='errorsList_message'>{codeErrors[code]}</span>)}
+            </div>}
+        </>
+    )
 }
-
-/*--- ErrorMessage ---*/
+/*--- ErrorsMessage ---*/
