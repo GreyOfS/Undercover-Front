@@ -1,9 +1,11 @@
 @import '../../assets/css/color';
 
 .input {
+    width: 100%;
     position: relative;
 
     &_field {
+        width: 100%;
         color: $text;
         border: none;
         background: none;

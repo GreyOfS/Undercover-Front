@@ -1,45 +1,48 @@
+@import './media';
 @import '../../assets/css/color';
 
 .pageLoginAndSignin {
-    position: relative;
     display: flex;
-    justify-content: center;
+    position: relative;
     align-items: center;
+    justify-content: center;
 
     &_themeToggleBtn {
-        position: absolute;
         top: 48px;
         right: 48px;
+        position: absolute;
     }
 
     &_section {
+        width: min(400px, 80%);
+
         &_nav {
-            position: relative;
+            gap: 30px;
             z-index: 1;
             display: flex;
-            gap: 30px;
+            position: relative;
 
             &_link {
-                background-color: $light_color;
                 color: #fff;
-                text-decoration: none;
-                padding: 5px 10px;
                 font-weight: 700;
+                padding: 5px 10px;
                 position: relative;
+                text-decoration: none;
                 filter: brightness(.8);
+                background-color: $light_color;
 
                 &:first-child {
                     border-radius: 10px 0 0 0;
                 }
 
                 &::after, &:not(:first-child)::before {
-                    content: "";
-                    background-color: $light_color;
-                    position: absolute;
-                    height: 100%;
-                    width: 35px;
                     top: 0;
+                    content: "";
+                    width: 35px;
                     z-index: -1;
+                    height: 100%;
+                    position: absolute;
+                    background-color: $light_color;
                 }
 
                 &::after {
@@ -62,17 +65,17 @@
         }
 
         & > *:not(:first-child) {
-            position: relative;
             z-index: 2;
+            position: relative;
         }
     }
 }
 
-.loginTab {
-    backdrop-filter: brightness($brightness);
-    display: flex;
-    flex-direction: column;
+.loginTab, .signinTab {
     gap: 10px;
     padding: 10px;
-    border-radius: 0 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 20px 20px 20px;
+    backdrop-filter: brightness($brightness);
 }
